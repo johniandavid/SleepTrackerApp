@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-title>Sleep Tracker</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-item-sliding *ngFor="let data of datas">
+      <ion-item>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>
+              <ion-badge color="tertiary">{{data.type}}</ion-badge>
+            </ion-card-subtitle>
+            <ion-card-title color="dark">{{data.dateString()}}</ion-card-title>
+          </ion-card-header>
+          <ion-card color="primary">
+            <ion-card-subtitle class="summary">{{data.summaryString()}}</ion-card-subtitle>
+          </ion-card>
+        </ion-card>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" expandable (click)="deleteData(data)">
+          <ion-icon name="trash"></ion-icon>
+          <ion-label>Delete</ion-label>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="start">
+        <ion-item-option color="success" expandable (click)="sendTweet(data)">
+          <ion-icon name="share"></ion-icon>
+          <ion-label>Tweet</ion-label>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="center" edge slot="fixed">
+    <ion-fab-button color="danger">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button color="light"routerLink="/overnight" routerDirection="forward"><ion-icon name="bed" color="dark"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button color="light" routerLink="/sleepiness" routerDirection="forward"><ion-icon name="flash" dark="warning"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="">
+    <ion-title>Sleepiness Log</ion-title>
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="home"></ion-back-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="summary" color="tertiary">
+    <ion-card-content>
+      <ion-label>{{ScaleValues[loggedValue]}}</ion-label>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="input">
+    <ion-card-header>
+      <ion-card-subtitle>Describe your energy level:</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-range color="tertiary" min="1" max="7" step="1" pin="true" snaps="true" ticks="true"[(ngModel)]="level" (ionChange)="handleRange(level)">
+        <ion-icon size="small" slot="start" name="flash" color="warning"></ion-icon>
+        <ion-icon slot="end" name="bed" color="dark"></ion-icon>
+      </ion-range>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="center" edge slot="fixed">
+    <ion-fab-button color="danger" (click)="buttonClicked()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+  </ion-toolbar>
+</ion-footer>

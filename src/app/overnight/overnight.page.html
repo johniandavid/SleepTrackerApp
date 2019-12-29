@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Overnight Log</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon name="moon" color="tertiary" slot="start"></ion-icon>
+      <ion-card-subtitle class="time">What time did you sleep?</ion-card-subtitle>
+    </ion-item>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-badge color="primary">Select Time</ion-badge>
+        <ion-datetime input-obj="datepickerObject2" displayFormat="h mm A" placeholder="10:00 PM" [(ngModel)]="sleep" (ionChange)="handleSleepStart(sleep)"></ion-datetime>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon name="sunny" color="warning"slot="start"></ion-icon>
+      <ion-card-subtitle class="time">What time did you wake up?</ion-card-subtitle>
+    </ion-item>
+    <ion-card-content>
+      <ion-item>
+        <ion-badge color="primary">Select Time</ion-badge>
+        <ion-datetime input-obj="datepickerObject" displayFormat="h mm A" placeholder="8:00 AM" [(ngModel)]="wake" (ionChange)="handleSleepEnd(wake)"></ion-datetime>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="center" edge slot="fixed">
+    <ion-fab-button color="danger">
+      <ion-icon name="add" (click)="buttonClicked()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="light">
+  </ion-toolbar>
+</ion-footer>
