@@ -30,7 +30,7 @@ exports.file = {
     // Where to put app-specific data files.
     dataDirectory: null,
     // Cached files that should survive app restarts.
-    // Apps should not rely on the OS to delete files in here.
+    // MobileApps should not rely on the OS to delete files in here.
     cacheDirectory: null,
     // Android: the application space on external storage.
     externalApplicationStorageDirectory: null,

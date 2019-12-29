@@ -32,7 +32,7 @@ export class HomePage {
         }
 
         this.socialSharing.canShareVia('Twitter').then(() => {
-            this.socialSharing.shareViaTwitter(message + " -- Tweeted via SleepTracker").then((res) => {
+            this.socialSharing.shareViaTwitter(message + " -- Tweeted via SleepTrackerApp").then((res) => {
             }).catch((e) => {
                 console.log(e);
             })

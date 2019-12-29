@@ -350,7 +350,7 @@ interface Cordova {
         applicationStorageDirectory: string;
         /* Where to put app-specific data files. */
         dataDirectory: string;
-        /* Cached files that should survive app restarts. Apps should not rely on the OS to delete files in here. */
+        /* Cached files that should survive app restarts. MobileApps should not rely on the OS to delete files in here. */
         cacheDirectory: string;
         /* Android: the application space on external storage. */
         externalApplicationStorageDirectory: string;
